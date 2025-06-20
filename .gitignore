@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual Envs
+venv/
+.venv/
+env/
+.uv/
+
+# Project files
+*.log
+*.lock
+*.sqlite3
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.*
+
+# yt-dlp download cache (if used)
+.ytdlp/
+
+# Output video files
+downloads/*.mp4
+
+# If ffmpeg.exe or other binaries are in the project
+ffmpeg.exe
+*.zip
+*.tar.gz
