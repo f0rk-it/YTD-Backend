@@ -27,7 +27,7 @@ def download_and_merge_youtube_video(url: str) -> str:
     final_path = os.path.join(OUTPUT_DIR, filename)
     
     video_opts = {
-        'format': 'bestvideo[height=1080][ext=mp4]/bestvideo[height<=1080][ext=mp4]',
+        'format': 'bestvideo[height=1440][ext=mp4]/bestvideo[height<=1080][ext=mp4]',
         'outtmpl': video_temp,
         'quiet': True,
         'no_warnings': True,
