@@ -5,7 +5,7 @@ import tempfile
 from yt_dlp import YoutubeDL
 from app.utils.filename import sanitize_filename
 
-FFMPEG_PATH = r"C:\ffmpeg\bin\ffmpeg.exe"
+FFMPEG_PATH = "ffmpeg"
 OUTPUT_DIR = 'downloads'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
