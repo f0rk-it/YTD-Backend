@@ -10,6 +10,9 @@ FFMPEG_PATH = os.path.abspath(FFMPEG_PATH)
 OUTPUT_DIR = 'downloads'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+COOKIES_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'cookies', 'cookies.txt')
+print(f"Using cookies from: {COOKIES_PATH}")
+
 def download_and_merge_youtube_video(url: str) -> str:
     # Extract video info
     info_opts = {
@@ -29,6 +32,7 @@ def download_and_merge_youtube_video(url: str) -> str:
     
     video_opts = {
         'format': 'bestvideo[height=1440][ext=mp4]/bestvideo[height<=1080][ext=mp4]',
+        'cookies': COOKIES_PATH,
         'outtmpl': video_temp,
         'quiet': True,
         'no_warnings': True,
@@ -36,6 +40,7 @@ def download_and_merge_youtube_video(url: str) -> str:
     
     audio_opts = {
         'format': 'bestaudio[ext=m4a]/bestaudio',
+        'cookies': COOKIES_PATH,
         'outtmpl': audio_temp,
         'quiet': True,
         'no_warnings': True,
