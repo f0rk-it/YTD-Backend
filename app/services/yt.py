@@ -5,8 +5,7 @@ import tempfile
 from yt_dlp import YoutubeDL
 from app.utils.filename import sanitize_filename
 
-FFMPEG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "bin", "ffmpeg")
-FFMPEG_PATH = os.path.abspath(FFMPEG_PATH)
+FFMPEG = 'ffmpeg'
 OUTPUT_DIR = 'downloads'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -64,7 +63,7 @@ def download_and_merge_youtube_video(url: str) -> str:
             ydl.download([url])
             
         merge_command = [
-            FFMPEG_PATH,
+            FFMPEG,
             '-y',
             '-i', video_temp,
             '-i', audio_temp,
