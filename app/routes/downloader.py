@@ -42,8 +42,8 @@ async def get_metadata(body: DownloadRequest):
         try:
             info = ydl.extract_info(body.url.strip(), download=False)
             print(f"Title: {info.get('title')}")
-            print(f"Uploader: {info.get("uploader")}")
-            print(f"Thumbnail: {info.get("thumbnail")}")
+            print(f"Uploader: {info.get('uploader')}")
+            print(f"Thumbnail: {info.get('thumbnail')}")
             return {
                 'title': info.get('title'),
                 'channel': info.get('uploader'),
